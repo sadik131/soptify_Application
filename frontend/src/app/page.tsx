@@ -1,19 +1,13 @@
-"use client"
-import { useEffect, useState } from "react";
+import Header from "@/components/layout/Header";
+import PlayList from "@/components/layout/PlayList";
 
 export default function Home() {
-  const [data, setData] = useState('');
 
-
-  useEffect(() => {
-    fetch('http://localhost:3001/data') // Replace with your NestJS server URL and port
-      .then(response => response.text())
-      .then(data => setData(data));
-  }, []);
 
   return (
-    <main>
-      {data}
+    <main className="bg-neutral-900 w-full mt-2 p-2 bg-gradient-to-b from-emerald-900 rounded-lg">
+      <Header/>
+      <PlayList />
     </main>
   );
 }
